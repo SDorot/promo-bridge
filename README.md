@@ -2,7 +2,6 @@
 
 **Promo Bridge**  es un plugin para Figma diseñado para sincronizar datos promocionales desde Google Sheets directamente a componentes dentro de archivos de Figma. Este flujo está pensado para equipos pequeños que necesitan mantener actualizados los precios o promociones en materiales visuales sin copiar y pegar manualmente los datos.
 
---- 
 
 ## 🧭 Propósito
 
@@ -18,7 +17,6 @@ Este plugin requiere de un servidor local que actúe como intermediario entre Fi
 
 > Repositorio del servidor: [Promo Bridge - Server](https://github.com/SDorot/promo-bridge-server) 
 
---- 
 
 ## 📋 Requisitos previos
 
@@ -29,7 +27,6 @@ Antes de ejecutar el plugin, asegúrate de contar con:
 - ✅ Configuración de las banderas (flags) que indican qué hoja y reglas usar.
 - ✅ Componentes en Figma con la estructura compatible definida por el plugin.
 
----
 
 ## 📦 Instalación 
 
@@ -57,7 +54,6 @@ Antes de ejecutar el plugin, asegúrate de contar con:
   - Ve a `Figma > Plugins > Development > Import from manifest`
   - Selecciona el archivo `manifest.json` ubicado en la raíz del proyecto.
 
----
 
 ## ⚙️ Configuración inicial
 
@@ -101,7 +97,6 @@ b. Actualiza el mapa de íconos en el componente `FlagSelector`.
 />
 ```
 
----
 
 ## 🗺️ Estructura esperada del archivo de Figma
 
@@ -117,7 +112,6 @@ Root                            (e.g., "Current Page")
 ```
 > El nombre del `ComponentNode` debe seguir este patrón: `Category={nombre_categoria}, Index={número}, Type=Text`.
 
----
 
 ## ⚙️ Configuración del Mapa de Navegación
 
@@ -137,7 +131,6 @@ Regular: {
 
 > ⚠️ Verifica visualmente el orden de los nodos hijos en Figma para establecer los índices correctos.
 
----
 
 ## 🔤 Configuración de Expresiones Regulares
 
@@ -161,7 +154,6 @@ export const TEXT_BRAND_REGEX_BY_FLAG = {
 ```
 > Puedes usar [Regex Tester](https://openreplay.com/tools/regex-tester/) para probar las expresiones regulares.
 
----
 
 ## 🧾 Configuración de Reglas
 
@@ -174,7 +166,6 @@ export type TemplateNewProp =
 | "-";
 ```
 
----
 
 ## 🧾 Configuración de Detectores
 
@@ -199,7 +190,6 @@ export const NewPropResolver: RulesResolver<TemplateNewProp> = {
 };
 ```
 
----
 
 ## 🚩 Estrategias por Bandera
 
@@ -212,7 +202,6 @@ const strategyMap: Record<Partial<FlagRetail>, () => FlagStrategy> = {
 };
 ```
 
----
 
 ## 🧾 Aplicadores por Bandera
 
@@ -232,7 +221,6 @@ switch (idx) {
 }
 ```
 
----
 
 ## 🖼 Demostración
 
@@ -253,7 +241,6 @@ Promotions (ComponentSetNode)
 			ABC-Text (InstanceNode) : Contiene los elementos correspondientes a la marca y descripcion.
 ```
 
----
 
 ### Ejecución
 
@@ -268,7 +255,6 @@ Promotions (ComponentSetNode)
 
 ![Debug Promo Bridge with Detailed Summary](docs/plugin_with_details.png)
 
----
 
 ## 📝 Licencia
 
